@@ -586,9 +586,7 @@
             </div>
         </div>
     </section>
-     <!-----//------/ ALBUMS /------//----->
-    <section id="albums">
-    <div id="albumSection" class="albums">
+           <div id="albumSection" class="albums">
         <div class="album" onclick="openAlbum('album0')">
             <img src="">
             <p>BRD</p>
@@ -736,7 +734,6 @@
             <source src="">
         </audio>
         </div>
-    
         
         <div id="album1" class="songs">
             <h9>Place Disponnible</h9>
@@ -764,7 +761,7 @@
         <div class="back" onclick="goBack()">
             Retour
         </div>
-        </div>
+          </div>
     </section>
     
     <!-----//------/ CONTACTS /-----//------>
@@ -923,7 +920,7 @@ const observer=new IntersectionObserver(entries=>{
 document.querySelectorAll(".fadeUp").forEach(el=>observer.observe(el));
 
 function openAlbum(id) {
-            document.getElementById('albumS(ection').style.display = 'none';
+            document.getElementById('albumSection').style.display = 'none';
             document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
             document.getElementById(id).style.display = 'block';
         }
@@ -931,6 +928,6 @@ function openAlbum(id) {
         function goBack() {
             document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
             document.getElementById('albumSection').style.display = 'grid';
-        }
+     }
     </script>
   </html>
