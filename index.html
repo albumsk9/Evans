@@ -835,54 +835,7 @@ Exploitez vos données pour mieux décider.
 <ul>
 <lu>✔ Scanner: Qr code , Sujets ...</lu><br>
 <lu>✔ Machine Learning</lu><br>
-<lu>✔     //----------// SECTION //-----------//
-    const sections = ["accueil", "albums", "contact", "services", "profil"];
-    function showSection(id) {
-    sections.forEach(sec => {
-    const el = document.getElementById(sec);
-    if (el) {
-    el.classList.toggle("active", sec === id);
-    }
-    });
-    }
-    //---------// FAQ TOOGLE //---------//
-    document.querySelectorAll(".faq-question").forEach(btn=> {
-    btn.addEventListener("click", ()=> {
-    const answer = btn.nextElementSibling;
-    answer.style.display = answer.style.display === "block"?"none": "block";
-    });
-    });
-    //-----//------/ ALBUMS /-----//------//
-    function openAlbum(id) {
-    document.getElementById('albumSection').style.display = 'none';
-    document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    }
-    
-    // Menu mobile
-    document.getElementById("menu-toggle").addEventListener("click",()=>{
-    const menu=document.getElementById("mobile-menu");
-    menu.style.display=(menu.style.display==="block")?"none":"block";
-    });
-    
-    // Animation au scroll
-    const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-    if(entry.isIntersecting){entry.target.classList.add("animate");}
-    });
-    },{threshold:0.2});
-    document.querySelectorAll(".fadeUp").forEach(el=>observer.observe(el));
-    
-    function openAlbum(id) {
-    document.getElementById('albumSection').style.display = 'none';
-    document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
-    document.getElementById(id).style.display = 'block';
-    }
-    
-    function goBack() {
-    document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
-    document.getElementById('albumSection').style.display = 'grid';
-    } de bord</lu>
+<lu>✔ Tablau de bord</lu>
 </ul>
 </div>
 </div>
@@ -915,11 +868,11 @@ Profils et informations a propos du createurs.
          <h8>• PROFIL : <span>Facebook</span></h8><br>    
          <h0><span2>Noms : </span2>Ni Evans <span1>(Dev/peur)</span1></h0>
         <div class="profil">
-            <img src="1753191497081.jpg">
+            <img src="Messenger_creation_2BB642DE-23A5-42F6-9CE1-7A4087CE3515.jpeg">
         </div>
 <ul>
     <h8>• Informations</h8><br>
-<lu>✔ Lien: <span>https://www.facebook.com/evans.0790</span></lu><br>
+<lu>✔ Lien: <span>https://www.facebook.com/profile.php?id=61585661070575</span></lu><br>
 <lu>✔ Whats App: <span>+261347105558</span></lu><br>
 </ul>
 </div>
