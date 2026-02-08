@@ -1,1 +1,935 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<style>    
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    body{
+        font-family:Arial,sans-serif;
+        background: #f9f9f9;
+        line-height:1.6;
+        transition:all 0.3s;
+    }
+    a{
+        text-decoration:none;
+        color:red;
+        font-size:22px;
+    }
+    img{
+        max-width:100%;
+        display:block;
+    }
+    header{
+        position:fixed;
+        top:0;left:0;
+        width:100%;
+        background: #0b1220;
+        z-index:1000;
+        transition:all 0.3s;
+    }
+    header .container{
+        max-width:370px;
+        margin:auto;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    header nav a{
+        margin-left:1rem;
+        color:#555;
+        font-weight:500;
+        transition:color 0.3s;
+    }
+    header nav a:hover{
+        color: #1e3c72;
+    }
+    #menu-toggle{
+        display:none;
+        width:11%;
+        height:40px;
+        font-size:1.4rem;
+        cursor:pointer;
+    }
+    #mobile-menu{
+        display:none;
+        background:#e0e0e0;
+        padding:1rem;
+        border-top:1px solid #ddd;
+    }
+    #mobile-menu a{
+        display:block;
+        padding:0.5rem 0;
+        color: black;
+        font-size: 17px;
+    }
+    @media(max-width:768px){nav{display:none;}#menu-toggle{display:block;}}
+    
+    /*-----//-----/ SECTIONS /-----//------*/
+    section {
+        display: none;
+        max-width: 500px;
+        padding: 9em 1em;
+        color: #222;
+    }
+    section.active {
+        display: block;
+        animation: fadeIn 0.5s ease-in-out;
+    }
+    .hero {
+        color: #fff;
+        text-align: center;
+    }
+    .hero p {
+        font-size: 17px;
+        max-width: 700px;
+        margin: auto;
+        color: black;
+        font-weight: 400;
+        text-align: center;
+    }
+    p span{
+        color: #2e7d32;
+        font-weight: 500;
+        font-size: 19px;
+    }
+    p3{
+        color: red;
+        opacity: 0.6;
+        margin-left: 5%;
+    }
+    p3 span{
+        color: black;
+        opacity: 0.6;
+    }
+    .service {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background: green;
+        margin: 10px;
+        margin-top: 5%;
+        padding: 5px;
+        color: white;
+        border-radius: 8px;
+    }
+    .client {
+        font-size: 14px;
+        background:  white;
+        height: 6%;
+        color: #F06292;
+        font-weight: 500;
+    }
+    .client span {
+        color: black;
+        opacity: 0.9;
+    }
+    img{
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+        border-radius: 9px;
+    }
+    .faq {
+        margin-left: auto;
+        max-width: 900px;
+        font-size: 13px;
+        padding: 1rem;
+    }
+    .faq h4 {
+        text-align: center;
+        color: #2196F3;
+        font-size: 17px;
+    }
+    .faq-item {
+        border: 1px;
+        border-radius: 6px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+    }
+    .faq-question {
+        width: 100%;
+        color: black;
+        padding: 1rem;
+        text-align: left;
+        background: #f9f9f9;
+        cursor: pointer;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-answer {
+        display: none;
+        padding: 1rem;
+        font-size: 15px;
+        margin-top: 10px;
+        text-align: center;
+        color: white;
+        background: #bdbdbd;
+        border-radius: 3px;
+    }
+    footer {
+        text-align: center;
+        background: #0a3d62;
+        color: #a2b1c6;
+        padding: 1em;
+        font-size: 0.9em;
+        border-radius: 0 0 12px 12px;
+    }
+    
+    /*-----//-----/ SERVICES /-----//-----*/
+    .services {
+        max-width: 1200px;
+        margin: auto;
+        padding: 4rem 1rem;
+    }
+    .services-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .grid {
+        display: grid;
+        gap: 2rem;
+    }
+    h4{
+        color: red;
+        opacity: 0.6;
+        font-size: 20px;
+    }
+@media(min-width:768px) {
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+        }}
+@media(min-width:992px) {
+    .grid-3 {
+        grid-template-columns: repeat(3,1fr);
+        }}
+    .service-card {
+        background: #eeeeee;
+        color: #F06292;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #F06292;
+    }
+    .service-icon {
+        font-size: 2rem;
+        color: #1e3c72;
+        margin-bottom: 1rem;
+    }
+    .service-card h3 {
+        margin-bottom: 0.5rem;
+        color: #1e3c72;
+    }
+    h3 span{
+        color: #2e7d32;
+        font-size: 20px;
+    }
+    .service-card ul {
+        padding-left: 1rem;
+    }
+    ul span{
+        color: red;
+        opacity: 0.6;
+    }
+    .service-card lu {
+        margin: 0.9rem 0;
+        color: black ;
+    }
+@media(max-width:768px) {
+    .grid-3 {
+            grid-template-columns: 1fr;
+        }}
+    .services-header p {
+        color: black ;
+    }
+    
+    /*-----//-----/ CONTACTS /------//-----*/
+    .form-title {
+        text-align: center;
+        color: #333;
+        color: #764ba2;
+        margin-bottom: 30px;
+        font-size: 26px;
+        font-weight: 600;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    .form-title span {
+        color:  #667eea;
+    }
+    .form-title::before {
+        content: '';
+        position: absolute;
+        height: 3px;
+        left: 0%;
+        bottom: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #71b7e6, #9b5b);
+        }
+    h6{
+        font-size: 17px;
+        text-align: center;
+        padding: 2rem;
+        color: black;
+        opacity: 0.6;
+    }
+    .name {
+        color: #0a3d62;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        opacity: 0.7;
+    }
+    .sujet {
+        color: #0a3d62;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        opacity: 0.7;
+    }
+    .msg {
+        color: #0a3d62;
+        font-weight: bold;
+        margin-bottom: 0.3rem;
+        opacity: 0.7;
+    }
+    .message {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        border-color: #2196F3;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        background: transparent;
+    }
+    h5{
+        color: #0a3d62;
+        font-size: 23px;
+    }
+    select:focus,
+    textarea:focus {
+        outline: none;
+        color: black;
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #42A5F5;
+        background-color: transparent;
+    }
+    textarea {
+        background-color: transparent;
+        color: black;
+        resize: vertical;
+        min-height: 120px;
+    }
+    input[type="number"],
+    input[type="text"] {
+        width: 100%;
+        padding: 12px 15px;
+        background-color: transparent;
+        border: 1px solid #2196F3;
+        border-radius: 8px;
+        color: black;
+        font-size: 1.1em;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    input[type="number"]:focus,
+    input[type="text"]:focus {
+        border-color: #2196F3;
+        box-shadow: 0 0 8px #42A5F5;
+        color: black;
+    }
+    input::placeholder {
+        color: #7A5BBD;
+        font-size: 17px;
+    }
+    button {
+        background-color: #5d5dfc;
+        text-align: center;
+        border-radius: 6px;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 1.1em;
+        font-weight: bold;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s ease;
+    }
+    input, button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: none;
+    }
+    
+    /* Songs */
+    .songs {
+        display: none;
+        margin-top: 30px;
+    }
+    .song {
+        background: #1e1e1e;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+    .song:hover {
+        background: #2a2a2a;
+    }
+    .back {
+        width: 50px;
+        padding: 5px 1px;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 5%;
+        background: red;
+        margin-bottom: 15px;
+        cursor: pointer;
+        color: white;
+    }
+    h7{
+        margin-left: 35%;
+        color: red;
+        font-size: 29px;
+        font-weight: 700;
+    }
+    h3{
+        color: black;
+        opacity: 0.8;
+    }
+    /* Albums */
+    .albums {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+            gap: 20px;
+    }
+    .album {
+        margin: 10px;
+        background: transparent;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 1px 5px red;
+        cursor: pointer;
+        transition: transform .2s;
+        }
+    .album:hover {
+            transform: scale(1.05);
+        }
+    .album img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 2px;
+    }
+    .album p {
+        margin: 0;
+        padding: 10px;
+        color: red;
+        text-align: center;
+        font-weight: bold;
+    }
+    h9{
+        margin-left: 25%;
+        color: #03a9f4;
+        font-size: 23px;
+        font-weight: 500;
+    }
+/*----//----/ PROFILS /-------//----*/
+    .profil-card {
+        background: #eeeeee;
+        color: #F06292;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px #2e7d32;
+    }
+    .profil-card lu {
+        margin: 0.9rem 0;
+        color: black ;
+    }
+    h0{
+        color: #2e7d32;
+        font-size: 22px;
+        font-weight: 500;
+        margin-left: 10%;
+    }
+    h0 span{
+        margin-left: 7%;
+    }
+    h0 span1{
+        color: black;
+        opacity: 0.6;
+        font-size: 16px;
+    }
+    h0 span2{
+        color: #1e3c72;
+        opacity: 0.6;
+    }
+    .profil{
+        width: 33%;
+        height: 10rem;
+        margin-left: 37%;
+        margin-top: 5%;
+    }
+    img{
+        border-radius: 23px;
+    }
+    h8{
+        color: #1e3c72;
+    }
+    h8 span{
+        color: red;
+        opacity: 0.6;
+    }
+/*----//----/ NOTIFICATIONS /-------//----*/
+    .notification {
+        position: fixed;
+        bottom: 50px;
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 15px 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        animation:bounce 0.5s ease-in-out infinite;
+        z-index: 9999;
+    }
+    .notification-text {
+        flex: 1;
+    }
+    .notification-text h4 {
+        margin: 0;
+        font-size: 16px;
+        color: black;
+    }
+    .notification-text z {
+        margin: 3px 0 0;
+        font-size: 14px;
+        color: #555;
+    }
+    .notification-text span{
+        color: red;
+        opacity: 0.5;
+    }
+    .title{
+        color: red;
+        text-align: center;
+    }
+        @keyframes fadeIn {
 
+        from { opacity: 0; transform: translateY(20px); }
+
+        to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0);}
+        50% {transform: translateY(-8px);}
+    </style>
+<body>
+  <!-------//------/ TETES/-------//-------->
+  <header class="fadeUp">
+  <div class="container">
+    <a href="#"><strong>Albums 🎶</strong></a>
+    <button id="menu-toggle">☰</button>
+  </div>
+  <div id="mobile-menu">
+    <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
+     <a href="#album" onclick="showSection('albums')">Albums</a>
+     <a href="#Contact" onclick="showSection('contact')">Contact</a>
+     <a href="#Services" onclick="showSection('services')">Services</a>
+     <a href="#Profil" onclick="showSection('profil')">Createurs</a> 
+  </div>
+</header>
+    <!-----//------/ ACCUEIL /------//------>
+    <section id="accueil" class="active">
+        <div class="hero">
+            <p><span>Bievenue</span> dans le site des Artistes disponibles, pour plus(...) d'infos veuiller nous contactez .</p>
+        </div>
+        <p3>• BRD : <span>Boss du Rap Dah-Man</span></p3>
+        <div class="image">
+            <img src=""/>
+        </div>
+        <div class="service">CONTACTS :
+            <div class="client">Facebook : <span>BRD Ofisialy</span><br>Whats up: <span>+261331120891</span><br> Email : <span>brdofisialy02gmail.com</span><br> 
+            </div>
+        </div>
+        <div class="faq">
+            <h4>Questions fréquentes</h4>
+            <div class="faq-item">
+                <button class="faq-question">Inona ny atao hoe Albums ?<span>▼</span></button>
+                <div class="faq-answer">
+                    <p>Ny Albums dia ahitana ireo karazana hira anah mpanankanto iray.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Te hiditra ato amin'ny Site Albums ve ny hiranao rehetra ?  <span>▼</span></button>
+                <div class="faq-answer">
+                    <p>Raha vonona hiditra ianao dia andefaso hafatra miafina izahay tompoko .</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Fanampi-panazavana... <span>▼</span></button>
+                <div class="faq-answer">
+                    <p>Tsindrio ny contact na mandefasa hafatra miafina dia valinay ny hafatrao tompoko.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-----//------/ ALBUMS /------//----->
+    <section id="albums">
+    <div id="albumSection" class="albums">
+        <div class="album" onclick="openAlbum('album0')">
+            <img src="">
+            <p>BRD</p>
+        </div>
+        <div class="album" onclick="openAlbum('album1')">
+            <img src="">
+            <p>Place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album2')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album3')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album4')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        </div>
+        
+        <div id="album0" class="songs">
+            <h9>Boss du Rap Dah-man</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+        <h3> 🎵 BRD - <span>My INSPIRAKO</span></h3>
+        <audio controls>
+            <source src="BRD - INSPI.mp3">
+        </audio>
+        
+        <h3> 🎵BRD x Andry Kl x Drey <span>The only one</span></h3>
+        <audio controls>
+            <source src="ANDRY KL ft DREY ft BRD ft ABELLAH - The Only One.mp3">
+        </audio>
+        
+        <h3> 🎵 BRD ft FY <span>Ezaka</span></h3>
+        <audio controls>
+            <source src="BRD - EZAKA ft FY.mp3">
+        </audio>
+        
+        <h3> 🎵 BRD - <span>Intro 2</span></h3>
+        <audio controls>
+            <source src="BRD -Intro-2.mp3">
+        </audio>
+        
+        <h3> 🎵 BRD ft BOUBA ft LAYONNE <span>Mba valio</span></h3>
+        <audio controls>
+            <source src="BRD ft BOUBA ft LAYONNE-Mba valio--1.mp3">
+        </audio>
+        
+        <h3> 🎵 BRD ft BOUBA <span>Crush</span></h3>
+        <audio controls>
+            <source src="BRD ft BOUBA - crush.mp3">
+        </audio>
+        
+        <h3> 🎵 BRD ft Elina ft BOUBA <span>Crush 2.0</span></h3>
+        <audio controls>
+            <source src="BRD ft BOUBA ft ELINA RF- Crush 2.0.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Hoan'i ...</span></h3>
+        <audio controls>
+            <source src="BRD_Hoan'i ......_PROD by ASKIAS RECORD _OFFICIAL AUDIO 2024.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft BOUBA ft CHRISTIEN <span>Toxique</span></h3>
+        <audio controls>
+            <source src="BRD ft BOOBA ft CHRISTIEN OFF-Toxique.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Only you</span></h3>
+        <audio controls>
+            <source src="BRD - Only you by Dd Studio 2024.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Bruoillon</span></h3>
+        <audio controls>
+            <source src="LONN BRD BRUOILLON.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft CHRISTEIN <span>Aza manahy</span></h3>
+        <audio controls>
+            <source src="bouba brd chri BR.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Freestyle</span></h3>
+        <audio controls>
+            <source src="BRD - freestyle_prod by Askias Records _.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft BOUBA <span>Efa babonao</span></h3>
+        <audio controls>
+            <source src="BOUBA x BRD - Efa babonao- (ASKIAS Records).mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>MAMA</span></h3>
+        <audio controls>
+            <source src="BRD-MAMA.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft BOUBA <span>Tsy misy atakaloko</span></h3>
+        <audio controls>
+            <source src="BRD x BOUBA _-_Tsy misy atakaloko-_-.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft LON <span>Tsy misy masolo</span></h3>
+        <audio controls>
+            <source src="LON &BRD&SSGANG-TSS Masolo.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Fiesta</span></h3>
+        <audio controls>
+            <source src="BRD_FIESTA_Official audio 2024.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft LON ft Lk <span>Tonga masika</span></h3>
+        <audio controls>
+            <source src="BRD X LK X LON-Tonga masika--1.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft LON ft LHT <span>Sambatra</span></h3>
+        <audio controls>
+            <source src="BRD X LON X LHT X JOKER X RAMAL- Sambatra -.mp3">
+        </audio>
+        
+        <h3> 🎵BRD ft LON <span>Kiala manja</span></h3>
+        <audio controls>
+            <source src="(1)LON iany ft lkft joker ft brd ft ramal - kiala manja-.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span>Malala</span></h3>
+        <audio controls>
+            <source src="BRD -MALALA.mp3">
+        </audio>
+        
+        <h3> 🎵BRD - <span></span></h3>
+        <audio controls>
+            <source src="">
+        </audio>
+        
+        <h3> 🎵BRD - <span></span></h3>
+        <audio controls>
+            <source src="">
+        </audio>
+        </div>
+        
+        <div id="album1" class="songs">
+            <h9>Place Disponnible</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+        </div>
+        
+        <div id="album2" class="songs">
+            <h9>Place Disponnible</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+        </div>
+        
+        <div id="album3" class="songs">
+            <h9>Place Disponnible</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+        </div>
+        
+        <div id="album4" class="songs">
+            <h9>Place Disponnible</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+        </div>
+    </section>
+    
+    <!-----//------/ CONTACTS /-----//------>
+    <section id="contact">
+    <div class="notification" id="downloadNotification">🔔
+    <div class="notification-text">
+        <h4>Contact <span>Pas encore disponnible</span></h4>
+        <z>veuillez utiliser une autre services.</z>
+    </div>
+</div>
+    <h1 class="form-title">Contact <span>Form</span></h1>
+    <h6>Veuillez completer les formulaires pour que nous vous aiderons.</h6>
+    <form>
+    <h5>Envoyez-nous des messages</h5>
+    <label for="name" class="name">Nom complet :</label>
+    <input type="text" id="name" required>
+    <label for="subject" class="sujet">Sujet :</label>
+    <input type="text" id="subject">
+    <label for="message" class="msg">Message :</label>
+    <textarea id="message" rows="5"class="message" placeholder="Envoyer nous des messages ..."></textarea>
+    <button type="submit" class="submit">Envoyer le message</button>
+    </form>
+    </section>
+    <!-----//------/ SERVICES /-----//------>
+    <section id="services">
+<div class="services-header fadeUp">
+<h4>Ce que nous offrons</h4>
+<p>
+Nous combinons expertise technique et vision stratégique pour vous fournir des solutions sur mesure.
+</p>
+</div>
+<div class="grid grid-3">
+<div class="service-card fadeUp">
+<div class="service-icon">
+💻
+</div>
+<h3>Développement Web</h3>
+<p>
+Des sites modernes et performants.
+</p>
+<ul>
+<lu>✔ Sites vitrines</lu><br>
+<lu>✔ E-commerce</lu><br>
+<lu>✔ Applications web</lu>
+</ul>
+</div>
+<div class="service-card fadeUp">
+<div class="service-icon">
+📱
+</div>
+<h3>Applications Mobiles</h3>
+<p>
+Expérience fluide sur toutes les plateformes.
+</p>
+<ul>
+<lu>✔ iOS et Android</lu><br>
+<lu>✔ Jeux similar</lu><br>
+<lu>✔ Apps d’entreprise</lu>
+</ul>
+</div>
+<div class="service-card fadeUp">
+<div class="service-icon">
+📊
+</div>
+<h3>Analyse de données</h3>
+<p>
+Exploitez vos données pour mieux décider.
+</p>
+<ul>
+<lu>✔ Scanner: Qr code , Sujets ...</lu><br>
+<lu>✔ Machine Learning</lu><br>
+<lu>✔ Tableaux de bord</lu>
+</ul>
+</div>
+</div>
+</section>
+
+    <!-----//-----/ CREATEURS /-----//------>
+  <section id="profil">
+    <div class="services-header fadeUp">
+<h4>🌐 Createurs du site</h4>
+<p>
+Profils et informations a propos du createurs.
+</p>
+</div>
+<div class="grid grid-3">
+    <div class="profil-card fadeUp">
+         <h8>• PROFIL : <span>Facebook</span></h8><br>    
+         <h0><span2>Noms : </span2>Mickael Evans <span1>(Dev/peur)</span1></h0>
+        <div class="profil">
+            <img src="1753191497081.jpg">
+        </div>
+<ul>
+    <h8>• Informations</h8><br>
+<lu>✔ Lien: <span>https://www.facebook.com/evans.0790</span></lu><br>
+<lu>✔ Whats App: <span>+261345676335</span></lu><br>
+</ul>
+</div>
+
+<div class="grid grid-3">
+    <div class="profil-card fadeUp">
+         <h8>• PROFIL : <span>Facebook</span></h8><br>    
+         <h0><span2>Noms : </span2>Ni Evans <span1>(Dev/peur)</span1></h0>
+        <div class="profil">
+            <img src="1753191497081.jpg">
+        </div>
+<ul>
+    <h8>• Informations</h8><br>
+<lu>✔ Lien: <span>https://www.facebook.com/profile.php?id=61585661070575</span></lu><br>
+<lu>✔ Whats App: <span>+261347105558</span></lu><br>
+</ul>
+</div>
+</section>
+    <!----//-------/ PIEDS /-------//------>
+    <footer>
+        &copy; 2026 | Albums .
+    </footer>
+</body>
+   <script>
+    //----------// SECTION //-----------//
+    const sections = ["accueil", "albums", "contact", "services", "profil"];
+    function showSection(id) {
+        sections.forEach(sec => {
+            const el = document.getElementById(sec);
+            if (el) {
+                el.classList.toggle("active", sec === id);
+            }
+        });
+    }
+    //---------// FAQ TOOGLE //---------//
+    document.querySelectorAll(".faq-question").forEach(btn=> {
+        btn.addEventListener("click", ()=> {
+            const answer = btn.nextElementSibling;
+            answer.style.display = answer.style.display === "block"?"none": "block";
+        });
+    });
+    //-----//------/ ALBUMS /-----//------//
+            function openAlbum(id) {
+            document.getElementById('albumSection').style.display = 'none';
+            document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+        
+        // Menu mobile
+document.getElementById("menu-toggle").addEventListener("click",()=>{
+  const menu=document.getElementById("mobile-menu");
+  menu.style.display=(menu.style.display==="block")?"none":"block";
+});
+
+// Animation au scroll
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add("animate");}
+  });
+},{threshold:0.2});
+document.querySelectorAll(".fadeUp").forEach(el=>observer.observe(el));
+
+function openAlbum(id) {
+            document.getElementById('albumS(ection').style.display = 'none';
+            document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function goBack() {
+            document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
+            document.getElementById('albumSection').style.display = 'grid';
+        }
+    </script>
+  </html>
