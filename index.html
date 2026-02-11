@@ -450,51 +450,49 @@
         font-weight: 500;
     }
 /*----//----/ PROFILS /-------//----*/
-    .profil-card {
-        background: #eeeeee;
-        color: #F06292;
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px #2e7d32;
-    }
-    .profil-card lu {
-        margin: 0.9rem 0;
-        color: black ;
-    }
-    h0{
-        color: #2e7d32;
-        font-size: 18px;
-        font-weight: 500;
-        margin-left: 10%;
-    }
-    h0 span{
-        margin-left: 7%;
-    }
-    h0 span1{
-        color: black;
-        opacity: 0.6;
-        font-size: 16px;
-    }
-    h0 span2{
-        color: #1e3c72;
-        opacity: 0.6;
-    }
-    .profil{
-        width: 33%;
-        height: 10rem;
-        margin-left: 37%;
-        margin-top: 5%;
-    }
-    img{
-        border-radius: 23px;
-    }
-    h8{
-        color: #1e3c72;
-    }
-    h8 span{
-        color: red;
-        opacity: 0.6;
-    }
+.portfolio{
+    background:white;
+    width:97%;
+    padding:25px;
+    margin: 5px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.portfolio img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    margin-left: 32%;
+    object-fit:cover;
+    border:4px solid #1877f2;
+}
+
+h2{
+    margin:15px 0 5px;
+}
+
+.facebook{
+    color:#1877f2;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.facebook:hover{
+    text-decoration:underline;
+}
+
+.telephone{
+    margin-top:15px;
+    padding:10px;
+    background:#1877f2;
+    color:white;
+    border-radius:10px;
+}
+.telephone span{
+    opacity: 0.6;
+}
 /*----//----/ NOTIFICATIONS /-------//----*/
     .notification {
         position: fixed;
@@ -875,32 +873,48 @@ Exploitez vos données pour mieux décider.
 Profils et informations a propos du createurs.
 </p>
 </div>
-<div class="grid grid-3">
-    <div class="profil-card fadeUp">
-         <h8>• PROFIL : <span>Facebook</span></h8><br>    
-         <h0><span2>Noms : </span2>Mickael <span1>(Dev/peur)</span1></h0>
-        <div class="profil">
-            <img src="1753191497081.jpg">
-        </div>
-<ul>
-    <h8>• Informations</h8><br>
-<lu>✔ Lien: <span>https://www.facebook.com/evans.0790</span></lu><br>
-<lu>✔ Whats App: <span>+261345676335</span></lu><br>
-</ul>
+<div class="portfolio">
+    <!-- PHOTO -->
+    <img src="1753191497081.jpg" alt="Photo du créateur">
+
+    <!-- NOM -->
+    <h2>Mickael Evans</h2>
+
+    <!-- FACEBOOK -->
+    <p>Facebook : 
+        <a class="facebook" href="https://facebook.com/tonprofil" target="_blank">
+            @TonNomFacebook
+        </a>
+    </p>
+
+    <!-- CONTACT -->
+    <div class="telephone">
+        Contact :<span> +261 34 56 763 35</span>
+        <br>
+        Email :<span> mickaelrakotoharilala@gmail.com</span>
+    </div>
 </div>
 
-<div class="grid grid-3">
-    <div class="profil-card fadeUp">
-         <h8>• PROFIL : <span>Facebook</span></h8><br>    
-         <h0><span2>Noms : </span2>Ni Evans <span1>(Dev/peur)</span1></h0>
-        <div class="profil">
-            <img src="Messenger_creation_2BB642DE-23A5-42F6-9CE1-7A4087CE3515.jpeg">
-        </div>
-<ul>
-    <h8>• Informations</h8><br>
-<lu>✔ Lien: <span>https://www.facebook.com/profile.php?id=61585661070575</span></lu><br>
-<lu>✔ Whats App: <span>+261347105558</span></lu><br>
-</ul>
+<div class="portfolio">
+    <!-- PHOTO -->
+    <img src="1753191497081.jpg" alt="Photo du créateur">
+
+    <!-- NOM -->
+    <h2>Ni Evans</h2>
+
+    <!-- FACEBOOK -->
+    <p>Facebook : 
+        <a class="facebook" href="https://facebook.com/tonprofil" target="_blank">
+            @TonNomFacebook
+        </a>
+    </p>
+
+    <!-- CONTACT -->
+    <div class="telephone">
+        Contact :<span> +261 33 71 055 58</span>
+        <br>
+        Email :<span> Larissa28@gmail.com</span>
+    </div>
 </div>
 </section>
     <!----//-------/ PIEDS /-------//------>
