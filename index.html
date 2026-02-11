@@ -676,12 +676,18 @@ h2{
         <div class="back" onclick="goBack()">
             Retour
         </div>
-        <h3> 🎵 BRD - <span>My INSPIRAKO</span></h3>
+        <h3> 🎵 BRD - <span>My INSPIRAKO</span><div class="like-btn" onclick="toggleLike(1)">
+        <span id="heart1" class="heart">❤</span>
+        <span id="count1" class="count">0</span>
+        </div></h3>
         <audio controls>
             <source src="BRD - INSPI.mp3">
         </audio>
         
-        <h3> 🎵BRD x Andry Kl x Drey <span>The only one</span></h3>
+        <h3> 🎵BRD x Andry Kl x Drey <span>The only one</span><div class="like-btn" onclick="toggleLike(2)">
+        <span id="heart1" class="heart">❤</span>
+        <span id="count1" class="count">0</span>
+        </div></h3>
         <audio controls>
             <source src="ANDRY KL ft DREY ft BRD ft ABELLAH - The Only One.mp3">
         </audio>
@@ -998,21 +1004,43 @@ function openAlbum(id) {
             document.getElementById('albumSection').style.display = 'grid';
         }
 
-     function toggleLike(button){
-    const heart = button.querySelector(".heart");
-    const countSpan = button.querySelector(".count");
+     // Charger les valeurs au démarrage
+window.onload = function(){
+    for(let i=1; i<=3; i++){
+        let savedCount = localStorage.getItem("count"+i);
+        let savedLiked = localStorage.getItem("liked"+i);
+
+        if(savedCount){
+            document.getElementById("count"+i).innerText = savedCount;
+        }
+
+        if(savedLiked === "true"){
+            document.getElementById("heart"+i).classList.add("active");
+        }
+    }
+};
+
+function toggleLike(id){
+
+    const heart = document.getElementById("heart"+id);
+    const countSpan = document.getElementById("count"+id);
 
     let count = parseInt(countSpan.innerText);
+    let liked = heart.classList.contains("active");
 
-    if(!heart.classList.contains("active")){
-        heart.classList.add("active");
+    if(!liked){
         count++;
+        heart.classList.add("active");
+        localStorage.setItem("liked"+id, "true");
     }else{
-        heart.classList.remove("active");
         count--;
+        heart.classList.remove("active");
+        localStorage.setItem("liked"+id, "false");
     }
 
     countSpan.innerText = count;
-     }
+    localStorage.setItem("count"+id, count);
+}
+
     </script>
   </html>
