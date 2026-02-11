@@ -59,13 +59,13 @@
     }
     #mobile-menu{
         display:none;
-        background:#e0e0e0;
+        background:white;
         padding:1rem;
         border-top:1px solid #ddd;
     }
     #mobile-menu a{
         display:block;
-        padding:0.5rem 0;
+        padding:0.2rem 0;
         color: black;
         font-size: 17px;
     }
@@ -544,17 +544,47 @@
     </style>
 <body>
   <!-------//------/ TETES/-------//-------->
-  <header class="fadeUp">
+    <header class="fadeUp">
   <div class="container">
     <a href="#"><strong>Albums 🎶</strong></a>
     <button id="menu-toggle">☰</button>
   </div>
   <div id="mobile-menu">
-    <a href="#accueil" onclick="showSection('accueil')">Accueil</a>
-     <a href="#album" onclick="showSection('albums')">Albums</a>
-     <a href="#Contact" onclick="showSection('contact')">Contact</a>
-     <a href="#Services" onclick="showSection('services')">Services</a>
-     <a href="#Profil" onclick="showSection('profil')">Createurs</a> 
+    <a href="#accueil" onclick="showSection('accueil')"><svg width="25" height="36" viewBox="0 0 24 4" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3L2 12h3v8h6v-5h2v5h6v-8h3L12 3z" />
+</svg> Accueil</a>
+     <a href="#album" onclick="showSection('albums')"><svg width="22" height="36" viewBox="0 0 24 3" xmlns="http://www.w3.org/2000/svg">
+  <!-- Couverture album -->
+  <rect x="3" y="3" width="18" height="18" rx="3" fill="#3F51B5"/>
+  <!-- Disque -->
+  <circle cx="12" cy="12" r="5" fill="white"/>
+  <circle cx="12" cy="12" r="2" fill="#3F51B5"/>
+</svg> Albums</a>
+     <a href="#Contact" onclick="showSection('contact')"><svg width="25" height="36" viewBox="0 0 24 4" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tête -->
+  <circle cx="12" cy="8" r="4"/>
+  <!-- Corps -->
+  <path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>
+  <!-- Téléphone -->
+  <path d="M16 3h4v4h-2V5h-2z"/>
+</svg> Contact</a>
+     <a href="#Services" onclick="showSection('services')"><svg width="22" height="35" viewBox="0 0 24 8" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
+  <!-- Engrenage -->
+  <path d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.027 7.027 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.9 2h-3.8a.5.5 0 0 0-.49.42l-.36 2.54c-.58.23-1.12.54-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.48a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .6.22l2.39-.96c.51.4 1.05.71 1.63.94l.36 2.54a.5.5 0 0 0 .49.42h3.8a.5.5 0 0 0 .49-.42l.36-2.54c.58-.23 1.12-.54 1.63-.94l2.39.96a.5.5 0 0 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5z"/>
+</svg> Services</a>
+     <a href="#Profil" onclick="showSection('profil')"><svg width="25" height="32" viewBox="0 0 24 10" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
+  <!-- Écran -->
+  <rect x="3" y="4" width="18" height="12" rx="2"/>
+  <!-- Pied écran -->
+  <rect x="9" y="18" width="6" height="2"/>
+  <!-- Symbole </> -->
+  <path d="M9 9l-2 2 2 2M15 9l2 2-2 2" 
+        stroke="white" 
+        stroke-width="1.5" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg> Createurs</a> 
   </div>
 </header>
     <!-----//------/ ACCUEIL /------//------>
