@@ -695,14 +695,37 @@ h2{
             </div>
         </div>
     </section>
-     <!-----//------/ ALBUMS /------//----->
+        <!-----//------/ ALBUMS /------//----->
     <section id="albums">
     <div id="albumSection" class="albums">
         <div class="album" onclick="openAlbum('album0')">
-            <img src="IMG_20251219_073601.jpg">
+            <img src="">
             <p>BRD</p>
         </div>
-        <div class="music" onclick="playSong('audio1','BRD - My inspirako')">
+        <div class="album" onclick="openAlbum('album1')">
+            <img src="">
+            <p>Place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album2')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album3')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        <div class="album" onclick="openAlbum('album4')">
+            <img src="">
+            <p>place dispo ✔</p>
+        </div>
+        </div>
+        
+        <div id="album0" class="songs">
+            <h9>Boss du Rap Dah-man</h9>
+        <div class="back" onclick="goBack()">
+            Retour
+        </div>
+<div class="music" onclick="playSong('audio1','BRD - My inspirako')">
 <img src="IMG_20251219_073601.jpg"><div class="show">My inspirako</div>
 </div>
 <div class="music" onclick="playSong('audio2','BRD x Andry kl x Drey - The only one')">
@@ -795,8 +818,9 @@ h2{
 <hh class="titre" id="playerTitle"></h2>
 <button onclick="togglePlay(event)" id="bigBtn">▶</button>
 </div>
-        </div>
-    </div>
+
+</div>
+    
         
         <div id="album1" class="songs">
             <h9>Place Disponnible</h9>
