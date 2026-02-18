@@ -415,6 +415,79 @@
         color: black;
         opacity: 0.8;
     }
+
+      .titre{
+        font-size: 20px;
+    }
+    .music{
+        display:flex;
+        align-items:center;
+        padding:12px;
+        border-bottom:1px solid #ccc;
+        background:white;
+        cursor:pointer;
+    }
+.music:hover{background:#e6f0f3}
+.music img{
+    width:50px;
+    height:50px;
+    margin-right:10px;
+}
+.bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#333;
+    color:white;
+    display:none;
+    align-items:center;
+    padding:10px;
+}
+.bottom-bar img{width:50px;height:50px;margin-right:10px}
+.controls{margin-left:auto}
+button{background:none;border:none;color:white;font-size:18px}
+.player{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#111;
+    color:white;
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+   }
+.player button{
+    font-size:25px;
+    margin-top:20px;
+   }
+.Artiste{
+    width:210px;
+    height:210px;
+    margin:40px auto;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.6);
+    animation:spin 10s linear infinite;animation-play-state:paused}
+.playing{animation-play-state:running}
+.Artiste img{
+    width:100%;
+    height:100%;
+    object-fit:cover;,
+    }
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.top{
+    width: 10%;
+    font-size:38px;
+    cursor:pointer;
+    background: #607D8B;
+    opacity: 0.6;
+    border-radius: 6px;
+    margin-right: 80%;
+}
     /* Albums */
     .albums {
         display: grid;
@@ -629,118 +702,99 @@ h2{
             <img src="IMG_20251219_073601.jpg">
             <p>BRD</p>
         </div>
-        <div class="album" onclick="openAlbum('album1')">
-            <img src="">
-            <p>Place dispo ✔</p>
-        </div>
-        <div class="album" onclick="openAlbum('album2')">
-            <img src="">
-            <p>place dispo ✔</p>
-        </div>
-        <div class="album" onclick="openAlbum('album3')">
-            <img src="">
-            <p>place dispo ✔</p>
-        </div>
-        <div class="album" onclick="openAlbum('album4')">
-            <img src="">
-            <p>place dispo ✔</p>
-        </div>
-        </div>
-        
-        <div id="album0" class="songs">
-            <h9>Boss du Rap Dah-man</h9>
-        <div class="back" onclick="goBack()">
-            Retour
-        </div>
-        <h3> 🎵 BRD - <span> My INSPIRAKO</span></h3>
-        <audio controls>
-            <source src="BRD - INSPI.mp3">
-        </audio>
-        
-        <h3> 🎵BRD x Andry Kl x Drey <span> The only one</span></h3>
-        <audio controls>
-            <source src="ANDRY KL ft DREY ft BRD ft ABELLAH - The Only One.mp3">
-        </audio>
-        
-        <h3> 🎵 BRD ft FY <span> Ezaka</span></h3>
-        <audio controls>
-            <source src="BRD - EZAKA ft FY.mp3">
-        </audio>
-        
-        <h3> 🎵 BRD - <span> The king</span></h3>
-        <audio controls>
-            <source src="BRD -Intro-2.mp3">
-        </audio>
-        
-        <h3> 🎵 BRD ft BOUBA <span> Crush</span></h3>
-        <audio controls>
-            <source src="BRD ft BOUBA - crush.mp3">
-        </audio>
-        
-        <h3> 🎵 BRD ft Elina ft BOUBA <span> Crush 2.0</span></h3>
-        <audio controls>
-            <source src="BRD ft BOUBA ft ELINA RF- Crush 2.0.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Hoan'i ...</span></h3>
-        <audio controls>
-            <source src="BRD_Hoan'i ......_PROD by ASKIAS RECORD _OFFICIAL AUDIO 2024.mp3">
-        </audio>
-        
-        <h3> 🎵BRD ft BOUBA ft CHRISTIEN <span> Toxique</span></h3>
-        <audio controls>
-            <source src="BRD ft BOOBA ft CHRISTIEN OFF-Toxique.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Only you</span></h3>
-        <audio controls>
-            <source src="BRD - Only you by Dd Studio 2024.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Bruoillon</span></h3>
-        <audio controls>
-            <source src="LONN BRD BRUOILLON.mp3">
-        </audio>
-        
-        <h3> 🎵BRD ft CHRISTEIN <span> Aza manahy</span></h3>
-        <audio controls>
-            <source src="bouba brd chri BR.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Freestyle</span></h3>
-        <audio controls>
-            <source src="BRD - freestyle_prod by Askias Records _.mp3">
-        </audio>
-        
-        <h3> 🎵BRD ft BOUBA <span> Efa babonao</span></h3>
-        <audio controls>
-            <source src="BOUBA x BRD - Efa babonao- (ASKIAS Records).mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> MAMA</span></h3>
-        <audio controls>
-            <source src="BRD-MAMA.mp3">
-        </audio>
-        
-        <h3> 🎵BRD ft BOUBA <span> Tsy misy atakaloko</span></h3>
-        <audio controls>
-            <source src="BRD x BOUBA _-_Tsy misy atakaloko-_-.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Fiesta</span></h3>
-        <audio controls>
-            <source src="BRD_FIESTA_Official audio 2024.mp3">
-        </audio>
-        
-        <h3> 🎵BRD ft LON ft LHT <span> Sambatra</span></h3>
-        <audio controls>
-            <source src="BRD X LON X LHT X JOKER X RAMAL- Sambatra -.mp3">
-        </audio>
-        
-        <h3> 🎵BRD - <span> Malala</span></h3>
-        <audio controls>
-            <source src="BRD -MALALA.mp3">
-        </audio>
+        <div class="music" onclick="playSong('audio1','BRD - My inspirako')">
+<img src="IMG_20251219_073601.jpg"><div class="show">My inspirako</div>
+</div>
+<div class="music" onclick="playSong('audio2','BRD x Andry kl x Drey - The only one')">
+<img src="IMG_20251219_073601.jpg"><div class="show">The only one</div>
+</div>
+<div class="music" onclick="playSong('audio3','BRD ft FY - Ezaka')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Ezaka</div>
+</div>
+<div class="music" onclick="playSong('audio4','BR - The king')">
+<img src="IMG_20251219_073601.jpg"><div class="show">The king</div>
+</div>
+<div class="music" onclick="playSong('audio5','BRD ft Bouba - Crush')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Crush</div>
+</div>
+<div class="music" onclick="playSong('audio6','BRD ft Elina ft Bouba - Crush 2.0')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Crush 2.0</div>
+</div>
+<div class="music" onclick="playSong('audio7','BRD  - Hoan i')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Hoan i</div>
+</div>
+<div class="music" onclick="playSong('audio8','BRD ft Bouba ft Christien - Toxique')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Toxique</div>
+</div>
+<div class="music" onclick="playSong('audio9','BRD - Only you')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Only you</div>
+</div>
+<div class="music" onclick="playSong('audio10','BRD  - Brouillon')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Brouillon</div>
+</div>
+<div class="music" onclick="playSong('audio11','BRD ft Christien - Aza manahy')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Aza manahy</div>
+</div>
+<div class="music" onclick="playSong('audio12','BRD  - Freestyle')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Freestyle</div>
+</div>
+<div class="music" onclick="playSong('audio13','BRD ft Bouba - Efa babonao')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Efa babonao</div>
+</div>
+<div class="music" onclick="playSong('audio14','BRD  - MAMA')">
+<img src="IMG_20251219_073601.jpg"><div class="show">MAMA</div>
+</div>
+<div class="music" onclick="playSong('audio15','BRD ft Bouba - Tsy misy atakaloko')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Tsy misy atakaloko</div>
+</div>
+<div class="music" onclick="playSong('audio16','BRD  - Fiesta')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Fiesta</div>
+</div>
+<div class="music" onclick="playSong('audio17','BRD ft LON ft LHT - Sambatra')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Sambatra</div>
+</div>
+<div class="music" onclick="playSong('audio18','BRD  - Malala')">
+<img src="IMG_20251219_073601.jpg"><div class="show">Malala</div>
+</div>
+
+<!-- audios dans HTML -->
+<audio id="audio1" src="BRD - INSPI.mp3"></audio>
+<audio id="audio2" src="ANDRY KL ft DREY ft BRD ft ABELLAH - The Only One.mp3"></audio>
+<audio id="audio3" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio4" src="BRD -Intro-2.mp3"></audio>
+<audio id="audio5" src="BRD ft BOUBA - crush.mp3"></audio>
+<audio id="audio6" src="BRD ft BOUBA ft ELINA RF- Crush 2.0.mp3"></audio>
+<audio id="audio7" src="BRD_Hoan'i ......_PROD by ASKIAS RECORD _OFFICIAL AUDIO 2024.mp3"></audio>
+<audio id="audio8" src="BRD_Hoan'i ......_PROD by ASKIAS RECORD _OFFICIAL AUDIO 2024.mp3"></audio>
+<audio id="audio9" src=""></audio>
+<audio id="audio10" src=""></audio>
+<audio id="audio11" src=""></audio>
+<audio id="audio12" src=" - freestyle_prod by Askias Records _.mp3"></audio>
+<audio id="audio13" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio14" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio15" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio16" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio17" src="BRD - EZAKA ft FY.mp3"></audio>
+<audio id="audio18" src="BRD - EZAKA ft FY.mF"></audio>
+
+<!-- notification bas -->
+<div class="bottom-bar" id="bar" onclick="openPlayer()">
+<img src="IMG_20251219_073601.jpg">
+<span id="title">Song</span>
+<div class="controls">
+<button onclick="togglePlay(event)" id="btn">▶</button>
+</div>
+</div>
+
+<!-- lecteur -->
+<div class="player" id="player">
+    <div class="top" onclick="closePlayer()">↩</div>
+    <!-- PLAYER -->
+<div id="playerPage">
+<div class="Artiste" id="album"><img src="IMG_20251219_073601.jpg"></div>
+<hh class="titre" id="playerTitle"></h2>
+<button onclick="togglePlay(event)" id="bigBtn">▶</button>
+</div>
         </div>
         
         <div id="album1" class="songs">
@@ -953,5 +1007,39 @@ function openAlbum(id) {
             document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
             document.getElementById('albumSection').style.display = 'grid';
         }
+     let currentAudio=null;
+
+function playSong(id,title){
+ if(currentAudio){currentAudio.pause();currentAudio.currentTime=0}
+ currentAudio=document.getElementById(id);
+ currentAudio.play();
+ document.getElementById('bar').style.display='flex';
+ document.getElementById('title').innerText=title;
+ document.getElementById('playerTitle').innerText=title;
+ document.getElementById('btn').innerText='⏸';
+ document.getElementById('bigBtn').innerText='⏸';
+}
+
+function togglePlay(e){
+ e.stopPropagation();
+ if(!currentAudio)return;
+ if(currentAudio.paused){
+  currentAudio.play();
+  btn.innerText='⏸';
+  bigBtn.innerText='⏸';
+ }else{
+  currentAudio.pause();
+  btn.innerText='▶';
+  bigBtn.innerText='▶';
+ }
+}
+
+function openPlayer(){
+ document.getElementById('player').style.display='flex';
+}
+
+function closePlayer(){
+ document.getElementById('player').style.display='none';
+    }
     </script>
   </html>
