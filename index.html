@@ -359,7 +359,7 @@
         color: #7A5BBD;
         font-size: 17px;
     }
-    button {
+    .submit {
         background-color: #5d5dfc;
         text-align: center;
         border-radius: 6px;
@@ -378,6 +378,55 @@
         margin: 10px 0;
         border-radius: 5px;
         border: none;
+    }
+      /* barre */
+    .topbar{
+        display:flex;
+        align-items:center;
+        gap:20px;
+     }
+        
+    /* icone svg */
+    .bell{
+        width:35px;
+        cursor:pointer;
+        position:relative;
+        margin-left: 80%;
+     }
+        
+    /* badge rouge */
+    .badge{
+        position:absolute;
+        top:-5px;
+        right:-5px;
+        background:red;
+        color:white;
+        border-radius:50%;
+        padding:3px 7px;
+        font-size:12px;
+    }
+        
+    /* box notification */
+    .notifications{
+        position:absolute;
+        top:70px;
+        right:40px;
+        width:300px;
+        background:#eeeeee;
+        border-radius:10px;
+        padding:15px;
+        display:none;
+        box-shadow:0 0 15px rgba(0,0,0,0.4);
+    }
+        
+    /* erreur */
+    .error{
+        border-left:4px solid red;
+        }
+        
+    /* success */
+        .success{
+        border-left:4px solid #2ecc71;
     }
     
     /* Songs */
@@ -860,6 +909,38 @@ h2{
     </div>
 </div>
     <h1 class="form-title">Contact <span>Form</span></h1>
+          <div class="topbar">
+<!-- SVG cloche -->
+<div class="bell" onclick="openNotif()">
+<svg viewBox="0 0 24 24" fill="gray">
+<path d="M12 2C10 2 8 4 8 6V7C8 8 7 10 6 11V13H18V11C17 10 16 8 16 7V6C16 4 14 2 12 2Z"/>
+</svg>
+<div class="badge">2</div>
+</div>
+</div>
+
+<!-- notifications -->
+<div class="notifications" id="box">
+
+<div class="msg success">
+
+<svg width="22" viewBox="0 0 24 24" fill="#2ecc71">
+<path d="M9 16L5 12L6.4 10.6L9 13.2L17.6 4.6L19 6"/>
+</svg>
+
+<div>
+Utiliser une autre services
+</div>
+</div>
+<div class="msg error">
+<svg width="22" viewBox="0 0 24 24" fill="red">
+<path d="M12 2L1 21H23L12 2Z"/>
+</svg>
+<div>
+Pas encore disponnibe
+</div>
+</div>
+</div>
     <h6>Veuillez completer les formulaires pour que nous vous aiderons.</h6>
     <form>
     <h5>Envoyez-nous des messages</h5>
@@ -1066,5 +1147,18 @@ function openPlayer(){
 function closePlayer(){
  document.getElementById('player').style.display='none';
     }
+
+function openNotif(){
+
+let box=document.getElementById("box");
+
+if(box.style.display=="block"){
+box.style.display="none";
+}
+else{
+box.style.display="block";
+}
+
+}
     </script>
   </html>
