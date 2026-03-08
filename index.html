@@ -769,6 +769,8 @@ h2{
     </section>
         <!-----//------/ ALBUMS /------//----->
     <section id="albums">
+<input type="text" id="search" placeholder="Rechercher un album..." onkeyup="searchAlbum()">
+      
     <div id="albumSection" class="albums">
         <div class="album" onclick="openAlbum('album0')">
             <img src="IMG_20251219_073601.jpg">
@@ -1222,6 +1224,31 @@ function toggleInbox() {
         box.style.display = "none";
     } else {
         box.style.display = "block";
+    }
+    
+}
+
+     //-----//------/ Recherche /-----//------//
+function searchAlbum() {
+    
+    let input = document.getElementById("search").value.toLowerCase()
+    
+    let albums = document.getElementsByClassName("album")
+    
+    for (let i = 0; i < albums.length; i++) {
+        
+        let name = albums[i].innerText.toLowerCase()
+        
+        if (name.includes(input)) {
+            
+            albums[i].style.display = "block"
+            
+        } else {
+            
+            albums[i].style.display = "none"
+            
+        }
+        
     }
     
 }
