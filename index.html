@@ -72,13 +72,60 @@
         font-size: 17px;
     }
     @media(max-width:768px){nav{display:none;}#menu-toggle{display:block;}}
+
+   /* bannière */
+.banner{
+background:linear-gradient(90deg,#7A5BBD,#ff8a65,#F06292);
+height:120px;
+border-radius: 3px;
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+font-family:Arial;
+}
+
+/* texte principal */
+.banner h1{
+font-size:40px;
+letter-spacing:1px;
+animation:glow 3s infinite alternate;
+}
+span{
+    color: #ff8a65;
+}
+span1{
+    color: #ef5350;
+}
+Span2{
+    color: #ba68c8;
+}
+span3{
+    color: #4db6ac;
+}
+Span4{
+    color: #4caf50;
+}
+Span5{
+    color: #607d8b;
+}
+
+/* effet lumineux */
+@keyframes glow{
+from{
+text-shadow:0 0 10px #e57373;
+}
+to{
+text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
+}
+}
     
     /*-----//-----/ SECTIONS /-----//------*/
     section {
         width: 100%;
         display: none;
         max-width: 500px;
-        padding: 9em 1em;
+        padding: 6em 1em;
         color: #222;
     }
     section.active {
@@ -769,8 +816,11 @@ h2{
     </section>
         <!-----//------/ ALBUMS /------//----->
     <section id="albums">
+      <div class="banner">
+<h1><span>A</span><span1>L</span1><Span2>B</Span2><span3>U</span3><span4>M</span4><span5>S</span5></h1>
+</div>
+      <input type="text" id="search" placeholder="🔎 Rechercher un album..." onkeyup="searchAlbum()">
       <div id="albumSection" class="albums">
-<input type="text" id="search" placeholder="🔎 Rechercher un album..." onkeyup="searchAlbum()">
         <div class="album" onclick="openAlbum('album0')">
             <img src="IMG_20251219_073601.jpg">
             <p>BRD</p>
