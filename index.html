@@ -379,19 +379,42 @@
         border-radius: 5px;
         border: none;
     }
+          .count{
+        position:absolute;
+        top:-5px;
+        right:3px;
+        background:red;
+        color:white;
+        border-radius:50%;
+        padding:3px 7px;
+        font-size:12px;
+    }
+    .inbox{
+        position:fixed;
+        top:60px;
+        right:10px;
+        width:250px;
+        background:white;
+        border-radius:8px;
+        box-shadow:0 0 10px gray;
+        display:none;
+        max-height:300px;
+        overflow:auto;
+    }
       /* barre */
     .topbar{
         display:flex;
         align-items:center;
         gap:20px;
      }
-        
+     
     /* icone svg */
     .bell{
         width:35px;
+        display: flex;
         cursor:pointer;
         position:relative;
-        margin-left: 80%;
+        left: 70%;
      }
         
     /* badge rouge */
@@ -405,7 +428,6 @@
         padding:3px 7px;
         font-size:12px;
     }
-        
     /* box notification */
     .notifications{
         position:absolute;
@@ -900,14 +922,11 @@ h2{
     
     <!-----//------/ CONTACTS /-----//------>
     <section id="contact">
-    <div class="notification" id="downloadNotification">🔔
-    <div class="notification-text">
-        <h4>Contact <span>Pas encore disponnible</span></h4>
-        <z>veuillez utiliser une autre services.</z>
-    </div>
-</div>
-    <h1 class="form-title">Contact <span>Form</span></h1>
+     <h1 class="form-title">Contact <span>Form</span></h1>
           <div class="topbar">
+              <div class="bell" onclick="toggleInbox()">🔲
+    <div class="count" id="count">0</div>
+</div>
 <!-- SVG cloche -->
 <div class="bell" onclick="openNotif()">
 <svg viewBox="0 0 24 24" fill="gray">
@@ -915,40 +934,41 @@ h2{
 </svg>
 <div class="badge">2</div>
 </div>
+    </div>
 </div>
 
 <!-- notifications -->
 <div class="notifications" id="box">
-
 <div class="msg success">
-
 <svg width="22" viewBox="0 0 24 24" fill="#2ecc71">
 <path d="M9 16L5 12L6.4 10.6L9 13.2L17.6 4.6L19 6"/>
 </svg>
-
-<div>
-Utiliser une autre services
+<div>Veuillez utiliser une Email exacte pour que nous vous aiderons.
 </div>
 </div>
 <div class="msg error">
 <svg width="22" viewBox="0 0 24 24" fill="red">
 <path d="M12 2L1 21H23L12 2Z"/>
 </svg>
-<div>
-Pas encore disponnibe
+<div>reponses quelques heures.
 </div>
 </div>
-</div>
+    </div>
     <h6>Veuillez completer les formulaires pour que nous vous aiderons.</h6>
     <form>
+
+<div class="inbox" id="inbox"></div>
+<div class="container">
     <h5>Envoyez-nous des messages</h5>
-    <label for="name" class="name">Nom complet :</label>
+    <label for="name" class="name">Email :</label>
     <input type="text" id="name" required>
+    
     <label for="subject" class="sujet">Sujet :</label>
     <input type="text" id="subject">
     <label for="message" class="msg">Message :</label>
-    <textarea id="message" rows="5"class="message" placeholder="Envoyer nous des messages ..."></textarea>
-    <button type="submit" class="submit">Envoyer le message</button>
+    <textarea id="msg" rows="5" class="message" placeholder="Envoyer nous des messages ..."></textarea>
+    <button class="submit" onclick="send()">Envoyer</button>
+</div>
     </form>
     </section>
     <!-----//------/ SERVICES /-----//------>
@@ -1155,8 +1175,54 @@ box.style.display="none";
 }
 else{
 box.style.display="block";
+} 
+}
+     //-----//------/ Contact /-----//------//
+let count = 0;
+
+function send() {
+    
+    let name = document.getElementById("name").value;
+    let subject = document.getElementById("subject").value;
+    let msg = document.getElementById("msg").value;
+    
+    if (name == "" || msg == "") {
+        alert("Remplir les champs");
+        return;
+    }
+    
+    count++;
+    
+    document.getElementById("count").innerText = count;
+    
+    let box = document.getElementById("inbox");
+    
+    let div = document.createElement("div");
+    
+    div.className = "message";
+    
+    div.innerHTML = "<b>" + name + "</b><br>" + subject + "<br>" + msg;
+    
+    box.prepend(div);
+    
+    document.getElementById("name").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("msg").value = "";
+    
+    alert("Message envoyé");
+    
 }
 
+function toggleInbox() {
+    
+    let box = document.getElementById("inbox");
+    
+    if (box.style.display == "block") {
+        box.style.display = "none";
+    } else {
+        box.style.display = "block";
+    }
+    
 }
     </script>
   </html>
