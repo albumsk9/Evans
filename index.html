@@ -22,6 +22,34 @@
         text-decoration:none;
         color:red;
         font-size:22px;
+        display: flex;
+    }
+    .logo{
+        width: 10%;
+    }
+    span6{
+        color: #ff8a65;
+        opacity: 0.4;
+    }
+    span1{
+        color: #ef5350;
+        opacity: 0.4;
+    }
+    Span2{
+        color: #ba68c8;
+        opacity: 0.4;
+    }
+    span3{
+        color: #4db6ac;
+        opacity: 0.4;
+    }
+    Span4{
+        color: #4caf50;
+        opacity: 0.4;
+    }
+    Span5{
+        color: #607d8b;
+        opacity: 0.4;
     }
     img{
         max-width:100%;
@@ -72,8 +100,8 @@
         font-size: 17px;
     }
     @media(max-width:768px){nav{display:none;}#menu-toggle{display:block;}}
-
-   /* bannière */
+    
+    /* bannière */
 .banner{
 background:linear-gradient(90deg,#7A5BBD,#ff8a65,#F06292);
 height:120px;
@@ -91,7 +119,7 @@ font-size:40px;
 letter-spacing:1px;
 animation:glow 3s infinite alternate;
 }
-span{
+span6{
     color: #ff8a65;
 }
 span1{
@@ -119,13 +147,12 @@ to{
 text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
 }
 }
-    
     /*-----//-----/ SECTIONS /-----//------*/
     section {
         width: 100%;
         display: none;
         max-width: 500px;
-        padding: 9em 1em;
+        padding: 6em 1em;
         color: #222;
     }
     section.active {
@@ -233,9 +260,8 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
         padding: 1em;
         font-size: 0.9em;
         border-radius: 0 0 12px 12px;
-    }
-    
-    /*-----//-----/ SERVICES /-----//-----*/
+ }
+        /*-----//-----/ SERVICES /-----//-----*/
     .services {
         max-width: 1200px;
         margin: auto;
@@ -306,8 +332,7 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
     .services-header p {
         color: black ;
     }
-    
-    /*-----//-----/ CONTACTS /------//-----*/
+/*-----//-----/ CONTACTS /------//-----*/
     .form-title {
         text-align: center;
         color: #333;
@@ -406,7 +431,7 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
         color: #7A5BBD;
         font-size: 17px;
     }
-    .submit {
+    .submit{
         background-color: #5d5dfc;
         text-align: center;
         border-radius: 6px;
@@ -419,14 +444,14 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
         width: 100%;
         transition: background-color 0.3s ease;
     }
-    input, button {
+input, button {
         width: 100%;
         padding: 10px;
         margin: 10px 0;
         border-radius: 5px;
         border: none;
     }
-          .count{
+    .count{
         position:absolute;
         top:-5px;
         right:3px;
@@ -462,7 +487,7 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
         cursor:pointer;
         position:relative;
         left: 70%;
-        font-size:20px;
+        font-size: 20px;
      }
         
     /* badge rouge */
@@ -546,12 +571,11 @@ text-shadow:0 0 40px #b2ebf2,0 0 80px #5c6bc0;
         background:white;
         cursor:pointer;
     }
-.music:hover{background:#e6f0f3}
-.music img{
+    .music img{
     width:50px;
     height:50px;
     margin-right:10px;
-}
+    }
 .bottom-bar{
     position:fixed;
     bottom:0;
@@ -643,7 +667,7 @@ button{background:none;border:none;color:white;font-size:18px}
         color: #03a9f4;
         font-size: 23px;
         font-weight: 500;
-    }
+  }
 /*----//----/ PROFILS /-------//----*/
 .portfolio{
     background:white;
@@ -687,58 +711,19 @@ h2{
 .telephone span{
     opacity: 0.6;
 }
-/*----//----/ NOTIFICATIONS /-------//----*/
-    .notification {
-        position: fixed;
-        bottom: 50px;
-        right: 10px;
-        background-color: white;
-        border: 1px solid #ddd;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        animation:bounce 0.5s ease-in-out infinite;
-        z-index: 9999;
-    }
-    .notification-text {
-        flex: 1;
-    }
-    .notification-text h4 {
-        margin: 0;
-        font-size: 16px;
-        color: black;
-    }
-    .notification-text z {
-        margin: 3px 0 0;
-        font-size: 14px;
-        color: #555;
-    }
-    .notification-text span{
-        color: red;
-        opacity: 0.5;
-    }
-    .title{
-        color: red;
-        text-align: center;
-    }
-        @keyframes fadeIn {
+
+    @keyframes fadeIn {
 
         from { opacity: 0; transform: translateY(20px); }
 
         to { opacity: 1; transform: translateY(0); }
     }
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0);}
-        50% {transform: translateY(-8px);}
     </style>
 <body>
-  <!-------//------/ TETES/-------//-------->
+  <!------//------/ TETES/-------//-------->
     <header class="fadeUp">
   <div class="container">
-    <a href="#"><strong>Albums 🎶</strong></a>
+    <a><img class="logo"src="BackgroundEraser_20260312_192815621.png"><strong><span6>A</span6><span1>L</span1><Span2>B</Span2><span3>U</span3><span4>M</span4><span5>S</span5></strong></a>
     <button id="menu-toggle">☰</button>
   </div>
   <div id="mobile-menu">
@@ -752,7 +737,7 @@ h2{
   <circle cx="12" cy="12" r="5" fill="white"/>
   <circle cx="12" cy="12" r="2" fill="#3F51B5"/>
 </svg> Albums</a>
-     <a href="#Contact" onclick="showSection('contact')"><svg width="25" height="36" viewBox="0 0 24 4" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
+<a href="#Contact" onclick="showSection('contact')"><svg width="25" height="36" viewBox="0 0 24 4" fill="#3F51B5" xmlns="http://www.w3.org/2000/svg">
   <!-- Tête -->
   <circle cx="12" cy="8" r="4"/>
   <!-- Corps -->
@@ -779,7 +764,7 @@ h2{
 </svg> Createurs</a> 
   </div>
 </header>
-    <!-----//------/ ACCUEIL /------//------>
+<!-----//------/ ACCUEIL /------//------>
     <section id="accueil" class="active">
         <div class="hero">
             <p><span>Bievenue</span> dans le site des Artistes disponibles, pour plus(...) d'infos veuiller nous contactez .</p>
@@ -814,13 +799,16 @@ h2{
             </div>
         </div>
     </section>
-        <!-----//------/ ALBUMS /------//----->
+            </div>
+</section>
+        <!-----//----/ ALBUMS /-----//----->
     <section id="albums">
-      <div class="banner">
-<h1><span>A</span><span1>L</span1><Span2>B</Span2><span3>U</span3><span4>M</span4><span5>S</span5></h1>
+<div class="banner">
+<h1><span5>A</span5><span1>L</span1><Span2>B</Span2><span3>U</span3><span4>M</span4><span5>S</span5></h1>
 </div>
-      <input type="text" id="search" placeholder="🔎 Rechercher un album..." onkeyup="searchAlbum()">
-      <div id="albumSection" class="albums">
+        <input type="text" id="search" placeholder="🔎 Rechercher un album..." onkeyup="searchAlbum()">
+        
+    <div id="albumSection" class="albums">
         <div class="album" onclick="openAlbum('album0')">
             <img src="IMG_20251219_073601.jpg">
             <p>BRD</p>
@@ -902,7 +890,6 @@ h2{
 <div class="music" onclick="playSong('audio18','BRD  - Malala')">
 <img src="IMG_20251219_073601.jpg"><div class="show">Malala</div>
 </div>
-
 <!-- audios dans HTML -->
 <audio id="audio1" src="BRD - INSPI.mp3"></audio>
 <audio id="audio2" src="ANDRY KL ft DREY ft BRD ft ABELLAH - The Only One.mp3"></audio>
@@ -941,9 +928,9 @@ h2{
 <hh class="titre" id="playerTitle"></h2>
 <button onclick="togglePlay(event)" id="bigBtn">▶</button>
 </div>
-   </div>
-        </div>        
-        <div id="album1" class="songs">
+</div>
+</div>
+<div id="album1" class="songs">
             <h9>Place Disponnible</h9>
         <div class="back" onclick="goBack()">
             Retour
@@ -971,10 +958,9 @@ h2{
         </div>
         </div>
     </section>
-    
-    <!-----//------/ CONTACTS /-----//------>
+    <!-----//-----/ CONTACTS /-----//------>
     <section id="contact">
-     <h1 class="form-title">Contact <span>Form</span></h1>
+    <h1 class="form-title">Contact <span>Form</span></h1>
           <div class="topbar">
               <div class="bell" onclick="toggleInbox()">📥
     <div class="count" id="count">0</div>
@@ -995,14 +981,14 @@ h2{
 <svg width="22" viewBox="0 0 24 24" fill="#2ecc71">
 <path d="M9 16L5 12L6.4 10.6L9 13.2L17.6 4.6L19 6"/>
 </svg>
-<div>Veuillez utiliser une Email exacte pour que nous vous aiderons, et dans cette Email nous vous repondrons a vos problèmes.
+<div>Veuillez utiliser une Email exacte .
 </div>
 </div>
 <div class="msg error">
 <svg width="22" viewBox="0 0 24 24" fill="red">
 <path d="M12 2L1 21H23L12 2Z"/>
 </svg>
-<div>Réponses quelques minutes...
+<div>reponses quelques heures.
 </div>
 </div>
     </div>
@@ -1022,8 +1008,8 @@ h2{
     <button class="submit" onclick="send()">Envoyer</button>
 </div>
     </form>
-    </section>
-    <!-----//------/ SERVICES /-----//------>
+  </section>
+  <!-----//-----/ SERVICES /-----//------>
     <section id="services">
 <div class="services-header fadeUp">
 <h4>Ce que nous offrons</h4>
@@ -1076,8 +1062,7 @@ Exploitez vos données pour mieux décider.
 </div>
 </div>
 </section>
-
-    <!-----//-----/ CREATEURS /-----//------>
+<!-----//-----/ CREATEURS /-----//------>
   <section id="profil">
     <div class="services-header fadeUp">
 <h4>🌐 Createurs du site</h4>
@@ -1094,9 +1079,9 @@ Profils et informations a propos du createurs.
 
     <!-- FACEBOOK -->
     <p>Facebook : 
-        <a class="facebook" href="https://www.facebook.com/evans.0790" target="_blank">
+        <i class="facebook" href="https://www.facebook.com/evans.0790" target="_blank">
             @Mickael
-        </a>
+        </i>
     </p>
 
     <!-- CONTACT -->
@@ -1106,7 +1091,6 @@ Profils et informations a propos du createurs.
         Email :<span> Albumsk9@gmail.com</span>
     </div>
 </div>
-
 <div class="portfolio">
     <!-- PHOTO -->
     <img src="Messenger_creation_2BB642DE-23A5-42F6-9CE1-7A4087CE3515.jpeg" alt="Photo du créateur">
@@ -1116,9 +1100,9 @@ Profils et informations a propos du createurs.
 
     <!-- FACEBOOK -->
     <p>Facebook : 
-        <a class="facebook" href="https://www.facebook.com/profile.php?id=61585661070575" target="_blank">
+        <i class="facebook" href="https://www.facebook.com/profile.php?id=61585661070575" target="_blank">
             @Ni Evans
-        </a>
+        </i>
     </p>
 
     <!-- CONTACT -->
@@ -1134,7 +1118,7 @@ Profils et informations a propos du createurs.
         &copy; 2026 | Albums .
     </footer>
 </body>
-   <script>
+<script>
     //----------// SECTION //-----------//
     const sections = ["accueil", "albums", "contact", "services", "profil"];
     function showSection(id) {
@@ -1172,8 +1156,7 @@ const observer=new IntersectionObserver(entries=>{
   });
 },{threshold:0.2});
 document.querySelectorAll(".fadeUp").forEach(el=>observer.observe(el));
-
-function openAlbum(id) {
+  function openAlbum(id) {
             document.getElementById('albumSection').style.display = 'none';
             document.querySelectorAll('.songs').forEach(s=>s.style.display = 'none');
             document.getElementById(id).style.display = 'block';
@@ -1227,9 +1210,10 @@ box.style.display="none";
 }
 else{
 box.style.display="block";
-} 
 }
-     //-----//------/ Contact /-----//------//
+}
+
+//-----//------/ Contact /-----//------//
 let count = 0;
 
 function send() {
@@ -1277,7 +1261,7 @@ function toggleInbox() {
     
 }
 
-     //-----//------/ Recherche /-----//------//
+//-----//------/ Recherche /-----//------//
 function searchAlbum() {
     
     let input = document.getElementById("search").value.toLowerCase()
